@@ -1,6 +1,8 @@
 import React from 'react'
+import PropTypes from "prop-types";
+import "./Navbar.css"
 
-export default function (props) {
+export default function Navbar(props) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,4 +33,16 @@ export default function (props) {
       </nav>
     </div>
   )
+}
+
+Navbar.propTypes = {
+  title: PropTypes.string,
+  aboutText:PropTypes.string,
+  contact:PropTypes.string
+}
+
+Navbar.defaultProps = {
+  title:'My Website',
+  aboutText:"About",
+  contact:"Contact Us"
 }
