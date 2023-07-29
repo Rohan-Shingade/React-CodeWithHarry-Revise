@@ -1,12 +1,15 @@
 .navbar-brand {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 27px;
-  margin: 0 100px 0 20px;
+  margin-right: 100px;
+  margin-left: 70px;
+  justify-content: space-between;
 }
 
 ul li {
   font-size: 20px;
   margin: 0 18px 0 18px;
+  justify-content: space-between;
   transition: scale 400ms;
 }
 
