@@ -6,5 +6,10 @@
 ul li {
   font-size: 20px;
   margin: 0 15px 0 15px;
+  transition: scale 400ms;
+}
+
+ul li:hover {
+  scale: 120%;
   font-weight: 500;
 }
