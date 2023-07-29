@@ -20,7 +20,7 @@ export default function TextForm(props) {
 
   return (
     <div>
-      <h1 className='my-5'>{props.heading}</h1>
+      <h2 className='my-5'>{props.heading}</h2>
       <div className="mb-3">
         <textarea className="form-control" value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="10"></textarea>
       </div>
