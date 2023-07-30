@@ -19,6 +19,10 @@ export default function TextForm(props) {
     setText(newText2);
   }
 
+  const handleClear = () => {
+    setText("");
+  }
+
   return (
     <div className='container'>
       <h2 className='my-5'>{props.heading}</h2>
@@ -30,7 +34,7 @@ export default function TextForm(props) {
         <button type="button" className="btn btn-primary my-3" onClick={handleLowerCase}>Convert to Lowercase</button>
         <button type="button" className="btn btn-primary my-3">Copy Text</button>
         <button type="button" className="btn btn-primary my-3">Remove Spaces</button>
-        <button type="button" className="btn btn-primary my-3">Delete All</button>
+        <button type="button" className="btn btn-primary my-3" onClick={handleClear}>Delete All</button>
       
       <div className="container">
         <h3>Your Text Preview: </h3>
