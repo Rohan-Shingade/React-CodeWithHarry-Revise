@@ -6,14 +6,15 @@
   justify-content: space-between;
 }
 
-ul li {
+ul li a{
   font-size: 20px;
   margin: 0 18px 0 18px;
   justify-content: space-between;
   transition: scale 400ms;
 }
 
-ul li:hover {
+ul li a:hover {
   scale: 110%;
   font-weight: 500;
 }
+
