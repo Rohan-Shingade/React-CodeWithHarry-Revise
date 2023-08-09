@@ -5,6 +5,7 @@ import About from './Components/About';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
+import Contact from './Components/Contact';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
       <div className='container'>
         <TextForm showAlert={showAlert} heading="TextUtils: Word Counter | Character counter | Remove Spaces" mode={mode}/>
         <About heading="About TextUtils"/>
+        <Contact/>
       </div>
     </>
   );

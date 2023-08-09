@@ -8,13 +8,14 @@
 
 ul li a{
   font-size: 20px;
-  margin: 0 18px 0 18px;
+  margin: 0 20px 0 20px;
+  padding: 10px;
   justify-content: space-between;
   transition: scale 400ms;
 }
 
 ul li a:hover {
-  scale: 102%;
+  scale: 100%;
   font-weight: 500;
 }
 
