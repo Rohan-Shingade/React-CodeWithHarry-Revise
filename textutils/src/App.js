@@ -7,30 +7,40 @@ import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
 
 function App() {
-  const[mode, setMode] = useState ('light');
-  const[alert, setAlert] = useState(null);
 
+  // const [btnText, setBtnText] = useState(btnText);
+
+  const[alert, setAlert] = useState(null);
+  
   const showAlert = (message, type) => {
     setAlert({
       msg: message,
       type: type
     })
     setTimeout(()=>{
-        setAlert(null);
+      setAlert(null);
     }, 1500);
   }
 
+
+  const[mode, setMode] = useState ('light');
+  
   const toggleMode = () => {
     if(mode === "light"){
       setMode("dark");
       document.body.style.backgroundColor = "#333";
+      // setBtnText("Enable Light Mode");
       showAlert("Dark Mode Enabled","Success");
+      document.title = 'TextUtils - Home (Dark Mode)'
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
+      // setBtnText("Enable Dark Mode");
       showAlert("Light Mode Enabled","Success");
+      document.title = 'TextUtils - Home (Light Mode)'
     }
   }
+
   return (
     <>
       <Navbar title="TextUtils" aboutText="About TextUtils" contact="Contact Me" mode={mode} toggleMode={toggleMode}/>
