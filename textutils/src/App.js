@@ -44,12 +44,11 @@ function App() {
 
   return (
     <>
-      <Navbar title="TextUtils" aboutText="About TextUtils" contact="Contact Me" mode={mode} toggleMode={toggleMode}/>
+      <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <div className='container'>
         <TextForm showAlert={showAlert} heading="TextUtils: Word Counter | Character counter | Remove Spaces" mode={mode}/>
         <About heading="About TextUtils"/>
-        
       </div>
     </>
   );
