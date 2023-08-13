@@ -52,7 +52,7 @@ function App() {
       <div className='container'>
         <Routes>
           <Route exact path="/" element={<TextForm showAlert={showAlert} heading="TextUtils: Word Counter | Character counter | Remove Spaces" mode={mode}/>}/>
-          <Route exact path="/about" element={<About heading="About TextUtils"/>}/>
+          <Route exact path="/about" element={<About heading="About TextUtils" mode={mode} />}/>
           <Route path="/*" element={<Error/>}/>
         </Routes>
       </div>
