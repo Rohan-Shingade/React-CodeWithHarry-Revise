@@ -42,16 +42,16 @@ export default function TextForm(props) {
 
   return (
     <div className='container' style={{color: props.mode === 'dark' ? 'white' : 'black'}}>
-      <h2 className='my-5'>{props.heading}</h2>
+      <h2 className='mb-3'>{props.heading}</h2>
       <div className="mb-3">
         <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode === 'dark' ? '#212529' : 'white', color: props.mode === 'dark' ? 'white' : 'black'}} id="myBox" rows="10"></textarea>
       </div>
 
-        <button type="button" className="btn btn-primary mx-2 my-3" onClick={handleUpperCase}>Convert to Upper Case</button>
-        <button type="button" className="btn btn-primary mx-2 my-3" onClick={handleLowerCase}>Convert to Lower Case</button>
-        <button type="button" className="btn btn-success mx-2 my-3" onClick={handleCopy}>Copy Text</button>
-        <button type="button" className="btn btn-primary mx-2 my-3" onClick={handelExtraSpaces}>Remove Extra Spaces</button>
-        <button type="button" className="btn btn-danger mx-2 my-3" onClick={handleClear}>Delete All</button>
+        <button type="button" disabled={text.length === 0} className="btn btn-primary mx-2 my-3" onClick={handleUpperCase}>Convert to Upper Case</button>
+        <button type="button" disabled={text.length === 0} className="btn btn-primary mx-2 my-3" onClick={handleLowerCase}>Convert to Lower Case</button>
+        <button type="button" disabled={text.length === 0} className="btn btn-success mx-2 my-3" onClick={handleCopy}>Copy Text</button>
+        <button type="button" disabled={text.length === 0} className="btn btn-primary mx-2 my-3" onClick={handelExtraSpaces}>Remove Extra Spaces</button>
+        <button type="button" disabled={text.length === 0} className="btn btn-danger mx-2 my-3" onClick={handleClear}>Delete All</button>
       
       <div className="container" style={{color: props.mode === 'dark' ? 'white' : 'black'}}>
         <h3>Your Text Summary </h3>
