@@ -26,8 +26,19 @@ function App() {
 
 
   const[mode, setMode] = useState ('light');
+
+  // const removeBodyClasses = () => {
+  //   document.body.classList.remove('bg-light') ;
+  //   document.body.classList.remove('bg-dark') ;
+  //   document.body.classList.remove('bg-success') ;
+  //   document.body.classList.remove('bg-danger') ;
+  //   document.body.classList.remove('bg-primary') ;
+  //   document.body.classList.remove('bg-warning') ;
+  // }
   
-  const toggleMode = () => {
+  const toggleMode = (cls) => {
+    // console.log(cls);
+    // document.body.classList.add('bg-'+cls);
     if(mode === "light"){
       setMode("dark");
       document.body.style.backgroundColor = "#333";
