@@ -6,8 +6,8 @@
 }
 
 .navbar .container-fluid .collapse ul {
-  text-align: center !important;
-  justify-content: center !important;
+  text-align: center;
+  justify-content: center;
 }
 
 ul li a{
