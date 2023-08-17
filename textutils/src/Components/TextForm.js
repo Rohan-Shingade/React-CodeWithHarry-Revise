@@ -63,16 +63,16 @@ export default function TextForm(props) {
       <button type="button" disabled={text.length === 0} className="btn btn-primary mx-2 my-3" onClick={handelExtraSpaces}> Remove Extra Spaces </button>
       <button type="button" disabled={text.length === 0} className="btn btn-danger mx-2 my-3" onClick={handleClear}> Delete All </button>
 
-      <div className="container" style={{ color: props.mode === "dark" ? "white" : "black" }}>
-        <h3>Your Text Summary </h3>
-        <p>Number of Words: {text.split(/\s+/).filter((element) => {return element.length !== 0}).length}{" "} words </p>
-        <p> Number of Characters: {text.length} characters </p>
-        <p> Reading Time: {0.08 * text.split(" ").filter((element) => { return element.length !== 0}).length}{" "} Minutes to read </p>
-        <h4>Text Preview</h4>
-        {/* <p>{text.length > 0 ? text : "Nothing to Preview"} </p> */}
-        <textarea className="form-control mt-3" value={text.length > 0 ? text : "Nothing to Preview"} onChange={handleOnChangeAlert} style={{ backgroundColor: props.mode === "dark" ? "#212529" : "white", color: props.mode === "dark" ? "white" : "black"}} id="myBox" rows="5"></textarea>
-        
+      <h3>Your Text Summary </h3>
+      <div className="container" id="textSummery" style={{ color: props.mode === "dark" ? "white" : "black" }}>
+        <p className="mx-5"> Number of Words: {text.split(/\s+/).filter((element) => {return element.length !== 0}).length}{" "} words </p>
+        <p className="mx-5"> Number of Characters: {text.length} characters </p>
+        <p className="mx-5"> Reading Time: {0.08 * text.split(" ").filter((element) => { return element.length !== 0}).length}{" "} Minutes to read </p>
       </div>
+      <h4>Text Preview</h4>
+      {/* <p>{text.length > 0 ? text : "Nothing to Preview"} </p> */}
+      <textarea className="form-control mt-3" value={text.length > 0 ? text : "Nothing to Preview"} onChange={handleOnChangeAlert} style={{ backgroundColor: props.mode === "dark" ? "#212529" : "white", color: props.mode === "dark" ? "white" : "black"}} id="myBox" rows="5"></textarea>
+        
     </div>
   );
 }
