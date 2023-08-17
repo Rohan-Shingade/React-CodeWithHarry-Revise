@@ -1,13 +1,7 @@
 .navbar-brand {
   font-weight: 500;
   font-size: 27px;
-  margin-left: 15px;
   justify-content: space-between;
-}
-
-.navbar .container-fluid .collapse ul {
-  text-align: center;
-  justify-content: center;
 }
 
 ul li a{
@@ -22,4 +16,5 @@ ul li a{
 ul li a:hover {
   color: black;
 }
+
 
