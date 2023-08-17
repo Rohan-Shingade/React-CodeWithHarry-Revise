@@ -7,6 +7,8 @@ import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
 import Error from './Components/Error';
 import { BrowserRouter as Main, Route, Routes} from 'react-router-dom';
+import Contact from './Components/Contact';
+
 
 function App() {
 
@@ -57,18 +59,19 @@ function App() {
   return (
     <>
     <Main>
-    
-      <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode}/>
+
+      <Navbar title="TextUtils" aboutText="About" contact="Contact" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
 
       <div className='container'>
         <Routes>
           <Route exact path="/" element={<TextForm showAlert={showAlert} heading="TextUtils: Word Counter | Character counter | Copy Text | Remove Spaces" mode={mode}/>}/>
           <Route exact path="/about" element={<About heading="About TextUtils" mode={mode} />}/>
+          <Route exact path="/contact" element={<Contact heading="Contact Me" mode={mode}/>}/>
           <Route path="/*" element={<Error/>}/>
         </Routes>
       </div>
-
+  
     </Main>
 
     </>

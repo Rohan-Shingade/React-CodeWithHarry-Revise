@@ -20,31 +20,41 @@ export default function TextForm(props) {
   };
 
   const handleCopy = () => {
-    console.log("copy button working ?");
-    var text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
+    // console.log("copy button working ?");
+    // var text = document.getElementById("myBox");
+    // text.select();
+    // navigator.clipboard.writeText(text.value);
+    navigator.clipboard.writeText(text);
     document.getSelection().removeAllRanges(); // text will not be remain selected after copy
     props.showAlert("Text Copied", "Success");
   };
 
   const handelExtraSpaces = () => {
-    let newText = text.split(/[ ]+/); //
-    setText(newText.join(" "));
-    props.showAlert("Extra Spaces Removed", "Success");
+    if(text !== '') {
+      let newText = text.split(/[ ]+/); //
+      setText(newText.join(" "));
+      props.showAlert("Extra Spaces Removed", "Success");
+    } else {
+      props.showAlert("There's Nothing Remove Spaces Into TextBox","warning");
+    }
+    
   };
 
   const handleClear = () => {
     setText("");
     props.showAlert("TextArea Cleared", "Success");
   };
+  // this is for preview text box
+  const handleOnChangeAlert = () => {
+    alert("Cannot edit in preview");
+}
 
   return (
-    <div className="container" style={{ color: props.mode === "dark" ? "white" : "black" }}>
+    <div className="container my-2" style={{ color: props.mode === "dark" ? "white" : "black" }}>
       <h2 className="mb-3">{props.heading}</h2>
       <div className="mb-3">
-      <label className="mb-2"> Enter Your Text Here: </label>
-        <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === "dark" ? "#212529" : "white", color: props.mode === "dark" ? "white" : "black"}} id="myBox" rows="10"></textarea>
+      <label className="mb-3"> Enter Your Text Here: </label>
+        <textarea className="form-control" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === "dark" ? "#212529" : "white", color: props.mode === "dark" ? "white" : "black"}} id="myBox" rows="8"></textarea>
       </div>
 
       <button type="button" disabled={text.length === 0} className="btn btn-primary mx-2 my-3" onClick={handleUpperCase}> Convert to Upper Case </button>
@@ -59,7 +69,8 @@ export default function TextForm(props) {
         <p> Number of Characters: {text.length} characters </p>
         <p> Reading Time: {0.08 * text.split(" ").filter((element) => { return element.length !== 0}).length}{" "} Minutes to read </p>
         <h4>Text Preview</h4>
-        <p>{text.length > 0 ? text : "Nothing to Preview"} </p>
+        {/* <p>{text.length > 0 ? text : "Nothing to Preview"} </p> */}
+        <textarea className="form-control mt-3" value={text.length > 0 ? text : "Nothing to Preview"} onChange={handleOnChangeAlert} style={{ backgroundColor: props.mode === "dark" ? "#212529" : "white", color: props.mode === "dark" ? "white" : "black"}} id="myBox" rows="5"></textarea>
         
       </div>
     </div>

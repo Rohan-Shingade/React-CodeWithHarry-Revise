@@ -1,22 +1,25 @@
 .navbar-brand {
   font-weight: 500;
   font-size: 27px;
-  margin-right: 100px;
   margin-left: 15px;
   justify-content: space-between;
+}
+
+.navbar .container-fluid .collapse ul {
+  text-align: center !important;
+  justify-content: center !important;
 }
 
 ul li a{
   color: black;
   font-size: 20px;
-  margin: 0 20px 0 20px;
+  font-weight: 600;
   padding: 10px;
   justify-content: space-between;
   transition: scale 400ms;
 }
 
 ul li a:hover {
-  scale: 100%;
-  font-weight: 500;
+  color: black;
 }
 
