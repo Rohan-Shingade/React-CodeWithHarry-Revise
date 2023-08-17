@@ -57,6 +57,7 @@ function App() {
   return (
     <>
     <Main>
+    
       <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
 
@@ -67,6 +68,7 @@ function App() {
           <Route path="/*" element={<Error/>}/>
         </Routes>
       </div>
+
     </Main>
 
     </>
